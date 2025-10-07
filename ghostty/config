@@ -1,0 +1,52 @@
+# Theme catppuccin-mocha-lavender
+
+theme = "catppuccin-mocha.conf"
+
+# Font config
+
+font-family = "FiraCode Nerd Font"
+font-size = 12
+# font-family = "MesloLGS Nerd Font"
+
+# reload config
+
+keybind = ctrl+shift+r=reload_config
+
+# splitting bindings
+
+keybind = ctrl+shift+h=new_split:left
+keybind = ctrl+shift+j=new_split:up
+keybind = ctrl+shift+k=new_split:down
+keybind = ctrl+shift+l=new_split:right
+
+# moving bindings
+
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+j=goto_split:up
+keybind = ctrl+alt+k=goto_split:down
+keybind = ctrl+alt+l=goto_split:right
+
+window-height = 35
+window-width = 135
+
+# shaders
+
+# custom-shader = shaders/cursor_blaze.glsl
+# custom-shader = shaders/cursor_blaze_no_trail.glsl
+custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/cursor_smear_fade.glsl
+# custom-shader = shaders/cursor_smear_gradient.glsl
+custom-shader = shaders/sparks.glsl
+# custom-shader = shaders/blaze_sparks.glsl
+
+# window-decoration
+
+window-decoration = auto
+
+# cursor color
+
+cursor-color = #d20efc
+
+# others
+
+split-divider-color = #3584e4
