@@ -1,4 +1,4 @@
 return {
-   'ThePrimeagen/vim-be-good',
-   build = ":VimBeGood",
+	"ThePrimeagen/vim-be-good",
+	build = ":VimBeGood",
 }

@@ -1,5 +1,9 @@
 return {
 	"nvimtools/none-ls.nvim",
+	lazy = false,
+	keys = {
+		{ "<leader>gf", vim.lsp.buf.format, desc = "Formats the file based on the LSP." },
+	},
 	config = function()
 		local null_ls = require("null-ls")
 		local formatting = null_ls.builtins.formatting
@@ -11,7 +15,7 @@ return {
 				formatting.stylua,
 				-- Python
 				formatting.black,
-            formatting.isort,
+				formatting.isort,
 				-- C, C++
 				formatting.clang_format,
 				-- Js, Ts
@@ -19,6 +23,6 @@ return {
 			},
 		})
 
-		set("n", "<leader>gf", vim.lsp.buf.format, {})
+		-- set("n", "<leader>gf", vim.lsp.buf.format, {})
 	end,
 }

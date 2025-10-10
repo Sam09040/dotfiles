@@ -13,7 +13,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "clangd", "pyright", "codebook", },
+				ensure_installed = { "lua_ls", "ts_ls", "clangd", "pyright", "codebook" },
 				sync_install = false,
 				automatic_enable = true,
 			})
@@ -21,6 +21,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		priority = 1000,
 		config = function()
 			set("n", "K", vim.lsp.buf.hover, {})
 			set("n", "gd", vim.lsp.buf.definition, {})
