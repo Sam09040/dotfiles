@@ -10,13 +10,6 @@ return {
 			{ "<leader>fo", ":Telescope oldfiles<cr>", desc = "Searches through old files" },
 		},
 		config = function()
-			-- local builtin = require("telescope.builtin")
-			-- local set = vim.keymap.set
-			-- -- Telescope
-			-- set('n', '<leader>fs', builtin.find_files, {})
-			-- set('n', '<leader>fp', builtin.git_files, {})
-			-- set('n', '<leader>fz', builtin.live_grep, {})
-			-- set('n', '<leader>fo', builtin.oldfiles, {})
 		end,
 	},
 	{

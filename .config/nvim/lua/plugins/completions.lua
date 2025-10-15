@@ -1,17 +1,17 @@
 return {
 	{
 		"saghen/blink.cmp",
+		debug = true,
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			"xzbdmw/colorful-menu.nvim",
 			"moyiz/blink-emoji.nvim",
 		},
 		build = "cargo build --release",
-		version = "1.*",
 		opts = {
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 			completion = {
-				accept = { auto_brackets = { enabled = true } },
+				accept = { auto_brackets = { enabled = false } },
 				ghost_text = {
 					enabled = true,
 					show_with_menu = true,
@@ -101,5 +101,6 @@ return {
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
+		priority = 50,
 	},
 }

@@ -25,14 +25,6 @@ opt.listchars = {
 opt.ignorecase = true
 opt.smartcase = true
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-   pattern = "*.py",
-   callback = function()
-      vim.opt.textwidth = 79
-      vim.opt.colorcolumn = "79"
-   end
-}) -- python formatting
-
 -- Diagnostic
 vim.diagnostic.config({
    virtual_text = true,
