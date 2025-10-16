@@ -3,7 +3,13 @@ return {
 	lazy = false,
 	debug = true,
 	keys = {
-		{ "<leader>gf", vim.lsp.buf.format({ timeout_ms = 2000 }), desc = "Formats the file based on the LSP." },
+		{
+			"<leader>gf",
+			function()
+				vim.lsp.buf.format({ timeout_ms = 2000 })
+			end,
+			desc = "Format buffer",
+		},
 	},
 	config = function()
 		local null_ls = require("null-ls")
@@ -21,7 +27,5 @@ return {
 				formatting.prettier,
 			},
 		})
-
-		-- set("n", "<leader>gf", vim.lsp.buf.format, {})
 	end,
 }

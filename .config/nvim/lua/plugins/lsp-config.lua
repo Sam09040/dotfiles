@@ -23,9 +23,9 @@ return {
 		"neovim/nvim-lspconfig",
 		priority = 1000,
 		config = function()
-			set("n", "K", vim.lsp.buf.hover, {})
-			set("n", "gd", vim.lsp.buf.definition, {})
-			set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			set("n", "K", vim.lsp.buf.hover)
+			set("n", "gd", vim.lsp.buf.definition)
+			set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
 		end,
 	},
 }

@@ -4,11 +4,14 @@ return {
 	opts = {
 		preset = "helix",
 		spec = {
-			{ "K", desc = "Hovers over explanation" },
-			{ "gd", desc = "Goes to definition" },
-			{ "ca", desc = "Does a code action, if possible" },
+			{
+				mode = { "n" },
+				{ "K", desc = "Hovers over explanation" },
+				{ "gd", desc = "Goes to definition" },
+			},
 			{
 				mode = { "n", "v" },
+				{ "ca", desc = "Does a code action" },
 				{ "<leader>w", ":w<cr>", desc = "Writes" },
 				{ "<leader>q", ":q<cr>", desc = "Quits" },
 			},
