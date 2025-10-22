@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.clipboard = "unnamedplus"
 set = vim.keymap.set
 set({ "n", "v" }, "<leader>y", [["+y]])
+set('n', '<Esc>', ':nohlsearch<CR>')
 
 require("options")
 require("lazy").setup("plugins")
