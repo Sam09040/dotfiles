@@ -59,7 +59,7 @@ return {
 						},
 					},
 				},
-				documentation = { window = { border = "single" } },
+				documentation = { window = { border = "single" }, auto_show = true },
 			},
 			keymap = {
 				preset = "default",

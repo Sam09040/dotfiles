@@ -8,6 +8,7 @@ return {
 				mode = { "n" },
 				{ "K", desc = "Hovers over explanation" },
 				{ "gd", desc = "Goes to definition" },
+				{ "<C-a>", "ggVG", desc = "Selects entire buffer" },
 			},
 			{
 				mode = { "n", "v" },

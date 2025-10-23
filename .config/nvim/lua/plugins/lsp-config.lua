@@ -13,7 +13,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "clangd", "pyright", "codebook" },
+				ensure_installed = { "lua_ls", "clangd", "pyright", "codebook" },
 				sync_install = false,
 				automatic_enable = true,
 			})
@@ -26,6 +26,8 @@ return {
 			set("n", "K", vim.lsp.buf.hover)
 			set("n", "gd", vim.lsp.buf.definition)
 			set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
+			set("n", "gr", vim.lsp.buf.references)
+			set({ "n", "v" }, "<leader>r", vim.lsp.buf.rename)
 		end,
 	},
 }
