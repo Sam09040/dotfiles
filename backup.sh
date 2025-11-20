@@ -2,8 +2,8 @@
 
 echo "Starting copies"
 
-cp -r ~/.config/nvim/ ~/dotfiles/.config/
-cp -r ~/.zshrc ~/dotfiles/zsh/
-cp -r ~/.tmux.conf ~/dotfiles
+cp -r ~/.config/nvim/ ./.config/
+cp -r ~/.zshrc ./zsh/
+cp -r ~/.tmux.conf ./
 
 echo "Finished copies"

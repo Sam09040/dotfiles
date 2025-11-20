@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Starting syncronization"
-cp -r ~/dotfiles/.config/nvim/ ~/.config/
-cp -r ~/dotfiles/.tmux.conf ~/
-cp -r ~/dotfiles/zsh/.zshrc ~/
+cp -r ./.config/nvim/ ~/.config/
+cp -r ./.tmux.conf ~/
+cp -r ./zsh/.zshrc ~/
 echo "Finished syncronization"
