@@ -52,3 +52,7 @@ use the prefix + I to install plugins and prefix + r to reload config
 ## Others
 - Manrope font
 - Pika Backup
+
+## Grub config
+got to /etc/default/grub 
+add the line: GRUB_THEME=`path to the theme`

@@ -5,7 +5,7 @@ theme = "catppuccin-mocha.conf"
 # Font config
 
 font-family = "FiraCode Nerd Font"
-font-size = 12
+font-size = 14
 
 # reload config
 
@@ -25,8 +25,8 @@ keybind = ctrl+alt+j=goto_split:up
 keybind = ctrl+alt+k=goto_split:down
 keybind = ctrl+alt+l=goto_split:right
 
-window-height = 35
-window-width = 135
+window-height = 38
+window-width = 145
 
 # shaders
 
