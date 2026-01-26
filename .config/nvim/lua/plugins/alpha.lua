@@ -34,7 +34,7 @@ return {
          dashboard.button("q", "❌ > Quit NVIM", ":qa<CR>"),
       }
 
-      set("n", "gta", ":Alpha<cr>", { desc = "Goes to Alpha dashboard" })
+      Set("n", "gta", ":Alpha<cr>", { desc = "Goes to Alpha dashboard" })
 
       -- Other configurations
       alpha.setup(dashboard.opts)

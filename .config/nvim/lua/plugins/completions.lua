@@ -6,7 +6,7 @@ return {
 			"rafamadriz/friendly-snippets",
 			"xzbdmw/colorful-menu.nvim",
 			"moyiz/blink-emoji.nvim",
-			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
+			{ "folke/lazydev.nvim", build = ":LazyDev", ft = "lua", opts = {} },
 		},
 		build = "cargo build --release",
 		opts = {
@@ -68,7 +68,6 @@ return {
 					},
 				},
 				documentation = {
-					window = { border = "single" },
 					auto_show = true,
 				},
 			},
@@ -79,7 +78,6 @@ return {
 			},
 			signature = {
 				enabled = true,
-				window = { border = "single rounded" },
 			},
 			sources = {
 				default = {
@@ -116,7 +114,7 @@ return {
 						fallbacks = { "snippets", "buffer" },
 						opts = {
 							trailing_slash = true,
-							label_trailing_slash = false,
+							label_trailing_slash = true,
 							get_cwd = function(context)
 								return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
 							end,

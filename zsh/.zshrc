@@ -47,7 +47,7 @@ alias upgrade="sudo dnf5 upgrade -y"
 alias ryujinx="~/scripts/ryujinx.sh"
 alias dnf="dnf5"
 alias fzf="fzf --preview='cat {}'"
-alias vim="nvim"
+alias vi="nvim"
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \

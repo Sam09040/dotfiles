@@ -8,7 +8,7 @@ return {
 	config = function()
 		local harpoon = require("harpoon")
 
-		harpoon.setup()
+		harpoon.setup(harpoon)
 		local harpoon_extensions = require("harpoon.extensions")
 		harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
 
@@ -31,10 +31,10 @@ return {
 				:find()
 		end
 
-		set("n", "<leader>a", function()
+		Set("n", "<leader>a", function()
 			harpoon:list():add()
 		end, { desc = "Adds buffer to harpoon list" })
-		set("n", "<leader>hl", function()
+		Set("n", "<leader>hl", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end, { desc = "Opens harpoon list" })
 	end,

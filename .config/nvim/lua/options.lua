@@ -1,4 +1,4 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 local opt = vim.opt
 
 opt.cursorline = true
@@ -11,7 +11,7 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
 
 -- Tab config
-opt.expandtab= true 
+opt.expandtab = true
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
@@ -26,9 +26,9 @@ opt.relativenumber = true
 -- Whitespace config
 opt.list = true
 opt.listchars = {
-   tab = '>> ',
-   trail = ' ',
-   nbsp = '+',
+  tab = ">> ",
+  trail = " ",
+  nbsp = "+",
 }
 
 -- Search config
@@ -38,16 +38,21 @@ opt.smartcase = true
 -- Diagnostic
 opt.winborder = "rounded"
 vim.diagnostic.config({
-   virtual_text = true,
-   signs = true,
-   underline = true,
-   update_in_insert = true,
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = true,
+  },
 })
 
--- Keymaps 
-local map = vim.keymap.set
+-- Keymaps
 local function set(mode, keys, command, desc)
-   map(mode, keys, command, { desc = desc })
+  Set(mode, keys, command, { desc = desc })
 end
 
 -- Go to config dir

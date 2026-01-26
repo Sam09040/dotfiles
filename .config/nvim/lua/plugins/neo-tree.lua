@@ -12,8 +12,6 @@ return {
 		{ "<leader>er", ":Neotree filesystem toggle<cr>", desc = "Toggles the Neotree" },
 		{ "<leader>ef", ":Neotree focus<cr>", desc = "Focuses on the Neotree when open" },
 	},
-	-- @module 'neo-tree'
-	-- @type neotree.Config
 	opts = {
 		enable_diagnostics = true,
 		enable_git_status = true,
@@ -21,8 +19,5 @@ return {
 		sort_case_insensitive = false,
 	},
 	config = function()
-		-- local set = vim.keymap.set
-		-- -- Neo Tree
-		-- set('n', '<leader>e', ':Neotree filesystem toggle<cr>')
 	end,
 }

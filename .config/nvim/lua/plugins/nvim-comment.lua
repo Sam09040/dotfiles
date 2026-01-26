@@ -6,6 +6,6 @@ return {
 	},
 	config = function()
 		require("nvim_comment").setup()
-		set({ "n", "v" }, "<leader>/", ":CommentToggle<cr>")
+		Set({ "n", "v" }, "<leader>/", ":CommentToggle<cr>")
 	end,
 }
