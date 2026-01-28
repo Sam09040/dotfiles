@@ -6,6 +6,7 @@ return {
 			"rafamadriz/friendly-snippets",
 			"xzbdmw/colorful-menu.nvim",
 			"moyiz/blink-emoji.nvim",
+      { "L3MON4D3/LuaSnip", version="2.*"},
 			{ "folke/lazydev.nvim", build = ":LazyDev", ft = "lua", opts = {} },
 		},
 		build = "cargo build --release",
@@ -19,6 +20,7 @@ return {
 					ignore_version_mismatch = true,
 				},
 			},
+      snippets = { preset = "luasnip" },
 			completion = {
 				accept = { auto_brackets = { enabled = false } },
 				ghost_text = {
@@ -134,9 +136,6 @@ return {
 					},
 					snippets = {
 						name = "snippets",
-						opts = {
-							friendly_snippets = true,
-						},
 						score_offset = 90,
 					},
 				},

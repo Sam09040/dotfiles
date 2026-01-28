@@ -9,7 +9,7 @@ return {
 		"3rd/image.nvim",
 	},
 	keys = {
-		{ "<leader>er", ":Neotree filesystem toggle<cr>", desc = "Toggles the Neotree" },
+		{ "<leader>et", ":Neotree filesystem toggle<cr>", desc = "Toggles the Neotree" },
 		{ "<leader>ef", ":Neotree focus<cr>", desc = "Focuses on the Neotree when open" },
 	},
 	opts = {

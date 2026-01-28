@@ -27,8 +27,10 @@ return {
   },
   config = function()
     Set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
-    Set("n", "gd", vim.lsp.buf.definition, { desc = "Goes to definition" })
+    Set("n", "gd", ":Telescope lsp_definitions<cr>", { desc = "Shows definition" })
+    Set("n", "gR", ":Telescope lsp_references<cr>", { desc = "Shows references" })
+    Set("n", "gD", ":Telescope diagnostics<cr>", { desc = "Shows diagnostics" })
     Set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Shows code actions" })
-    Set({ "n", "v" }, "<leader>r", vim.lsp.buf.rename, { desc = "Rename" })
+    Set({ "n", "v" }, "<leader>gr", vim.lsp.buf.rename, { desc = "Rename" })
   end,
 }

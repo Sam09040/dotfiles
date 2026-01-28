@@ -12,7 +12,7 @@ return {
 			},
 			{
 				mode = { "n", "v" },
-				{ "ca", desc = "Does a code action" },
+				{ "<leader>ca", desc = "Does a code action" },
 				{ "<leader>w", ":w<cr>", desc = "Writes" },
 				{ "<leader>q", ":q<cr>", desc = "Quits" },
 			},
@@ -20,7 +20,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>?",
+			"<leader><space>",
 			function()
 				require("which-key").show({ global = true })
 			end,

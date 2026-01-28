@@ -1,4 +1,3 @@
-[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -22,10 +21,7 @@ setopt globdots
 PYTHON_VENV_NAME=".venv"
 plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete command-not-found tmux)
 
-export ZSH_TMUX_AUTOSTART=true
-
 source $ZSH/oh-my-zsh.sh
-
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
