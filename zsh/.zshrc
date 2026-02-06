@@ -31,16 +31,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-function compile {
-  file="$1"
-  filename="${file%.*}"
-  gcc "$file" -Wall -o "$filename" && ./"$filename"
-}
-
 alias ls="lsd -A"
 alias cat="bat"
+alias compile="~/scripts/compile.sh"
+alias cookie="~/scripts/cookie.sh"
 alias upgrade="sudo dnf5 upgrade -y"
-alias ryujinx="~/scripts/ryujinx.sh"
 alias dnf="dnf5"
 alias fzf="fzf --preview='cat {}'"
 alias vi="nvim"
