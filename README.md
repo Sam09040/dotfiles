@@ -11,9 +11,15 @@ sudo dnf copr enable lihaohong/yazi
 
 ```bash
 sudo dnf5/apt install / pacman -S rustup bat lsd zsh zsh-autosuggestions zsh-syntax-highlighting fzf git tldr ghostty fastfetch uv zoxide ripgrep tmux gamemode mangohud nvim yazi -y
+```
 
+### After installing everything run:
+```bash
 tldr -u
+```
 
+### After copying the files from the dotfiles:
+```bash
 enable-fzf-tab
 toggle-fzf-tab
 ```
