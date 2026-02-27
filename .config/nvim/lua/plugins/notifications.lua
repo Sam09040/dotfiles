@@ -11,5 +11,8 @@ return {
 				command_palette = true,
 			},
 		})
+    require("notify").setup({
+      background_colour="#000000"
+    })
 	end,
 }

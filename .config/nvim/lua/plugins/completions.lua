@@ -9,7 +9,7 @@ return {
       { "L3MON4D3/LuaSnip", version="2.*"},
 			{ "folke/lazydev.nvim", build = ":LazyDev", ft = "lua", opts = {} },
 		},
-		build = "cargo build --release",
+		build = "cargo +nightly build --release",
 		opts = {
 			appearance = {
 				nerd_font_variant = "normal",

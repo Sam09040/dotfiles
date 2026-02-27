@@ -42,7 +42,6 @@ sudo snap install nvim yazi --classic
 command with all of them:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";\
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions;\
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting;\
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete;\
@@ -80,7 +79,12 @@ rustup default nightly
 ```
 
 ## tmux
+### First you gotta install the tpm
+```bash
+git clone https://github.com/tmux-plugins/tpm
+```
 
+### Then use the following commands
 Use the original prefix (C-b) + I to install plugins and (C-b) + r to reload config on first install.
 
 ## Others
