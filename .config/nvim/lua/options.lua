@@ -1,14 +1,32 @@
 vim.g.mapleader = " "
 local opt = vim.opt
 
+--- ==================================================
+--- OPTIONS
+--- ==================================================
+-- Line options
 opt.cursorline = true
+opt.wrap = false
+opt.scrolloff = 10
+opt.sidescrolloff = 10
 opt.backspace = "indent,eol,start"
+opt.signcolumn = "yes"
+opt.colorcolumn = "100"
 
 -- Fold config
+opt.showmatch = true
 opt.foldcolumn = "1"
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
+
+-- Backup config
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
+opt.updatetime = 300
+opt.autoread = true
+opt.hidden = true
 
 -- Tab config
 opt.expandtab = true
@@ -50,13 +68,35 @@ vim.diagnostic.config({
   },
 })
 
--- Keymaps
+-- Cursor config
+vim.api.nvim_set_hl(0, "CursorM", { fg = "#000000", bg = "#d20efc" })
+opt.guicursor = "n-v-c:block-CursorM,i-ci:ver40-CursorM,a:blinkwait700-blinkoff400-blinkon250-CursorM"
+
+--- ==================================================
+--- Keymaps
+--- ==================================================
 local function set(mode, keys, command, desc)
   Set(mode, keys, command, { desc = desc })
 end
 
 -- Go to config dir
 set("n", "<leader>cfg", ":cd ~/.config/nvim/<cr> :e .<cr>", "Go to config dir")
+
+-- Better movement
+set({ "n", "v" }, "<leader>l", "$", "Go to the end of the line")
+set({ "n", "v" }, "<leader>h", "_", "Go to the begin of the line")
+
+vim.keymap.set("n", "j", function()
+  return vim.v.count == 0 and "gj" or "j"
+end, { expr = true, silent = true, desc = "Down (wrap-aware)" })
+vim.keymap.set("n", "k", function()
+  return vim.v.count == 0 and "gk" or "k"
+end, { expr = true, silent = true, desc = "Up (wrap-aware)" })
+
+set("n", "n", "nzzzv", "Next search result (centered)")
+set("n", "N", "Nzzzv", "Previous search result (centered)")
+set("n", "<leader>j", "<C-d>zz", "Half page down (centered)")
+set("n", "<leader>k", "<C-u>zz", "Half page up (centered)")
 
 -- Splitting and resizing
 set("n", "<leader>sv", ":vsplit<cr>", "Split window vertically")
@@ -81,3 +121,46 @@ set("v", "<A-K>", ":m '<-2<cr>gv=gv", "Move selection up")
 -- Better indenting in visual mode
 set("v", "<", "<gv", "Indent left and reselect")
 set("v", ">", ">gv", "Indent right and reselect")
+
+--- ==================================================
+--- AUTOCMDS
+--- ==================================================
+
+local augroup = vim.api.nvim_create_augroup("UserConfig", { clear = true })
+function CreateAutocmd(event, opts)
+  vim.api.nvim_create_autocmd(event, opts)
+end
+
+-- highlight yanked text
+CreateAutocmd("TextYankPost", {
+  group = augroup,
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
+
+-- return to last cursor position
+CreateAutocmd("BufReadPost", {
+  group = augroup,
+  desc = "Restore last cursor position",
+  callback = function()
+    if vim.o.diff then
+      return
+    end
+
+    local last_pos = vim.api.nvim_buf_get_mark(0, '"') -- {line, col}
+    local last_line = vim.api.nvim_buf_line_count(0)
+
+    local row = last_pos[1]
+    if row < 1 or row > last_line then
+      return
+    end
+
+    pcall(vim.api.nvim_win_set_cursor, 0, last_pos)
+  end,
+})
+
+--- ==================================================
+--- FLOATING TERMINAL
+--- ==================================================
+--- TODO

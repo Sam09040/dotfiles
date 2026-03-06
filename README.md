@@ -10,7 +10,7 @@ sudo dnf copr enable lihaohong/yazi
 ## Install all necessary packages
 
 ```bash
-sudo dnf5/apt install / pacman -S rustup bat lsd zsh zsh-autosuggestions zsh-syntax-highlighting fzf git tldr ghostty fastfetch uv zoxide ripgrep tmux gamemode mangohud nvim yazi -y
+sudo dnf5/apt install / pacman -S rustup bat lsd zsh zsh-autosuggestions zsh-syntax-highlighting fzf git tldr ghostty fastfetch uv zoxide ripgrep tmux gamemode mangohud nvim yazi fortune cowsay lolcat -y
 ```
 
 ### After installing everything run:

@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
-		lazypath,
-	})
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -15,7 +15,7 @@ vim.opt.clipboard = "unnamedplus"
 
 Set = vim.keymap.set
 Set({ "n", "v" }, "<leader>y", [["+y]])
-Set('n', '<Esc>', ':nohlsearch<CR>')
+Set("n", "<Esc>", ":nohlsearch<CR>", { expr = true, silent = true, desc = "Clear highlighted search text" })
 
 require("options")
 require("lazy").setup("plugins")

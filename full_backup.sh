@@ -9,5 +9,6 @@ cp -r ~/.zshrc ./zsh/
 cp -r ~/.p10k.zsh ./zsh/
 cp -r ~/bat/ ./
 cp -r ~/.tmux.conf ./
+cp -r ~/scripts/*.sh ./
 
 echo "Finished copies"
