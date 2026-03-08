@@ -18,4 +18,5 @@ Set({ "n", "v" }, "<leader>y", [["+y]])
 Set("n", "<Esc>", ":nohlsearch<CR>", { expr = true, silent = true, desc = "Clear highlighted search text" })
 
 require("options")
+require("plugin.floaterminal")
 require("lazy").setup("plugins")
