@@ -1,0 +1,219 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == visual) || vim_mode == operator)",
+    "bindings": {
+      "alt-shift-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == visual) || vim_mode == operator)",
+    "bindings": {
+      "alt-shift-j": "editor::MoveLineDown",
+    },
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == visual) && !menu)",
+    "bindings": {
+      "ctrl-a": "editor::SelectAll",
+    },
+  },
+  {
+    "context": "(vim_mode == normal)",
+    "bindings": {
+      "space g f": "editor::Format",
+    },
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == visual) && (!menu ))",
+    "bindings": {
+      "space w": "workspace::Save",
+    },
+  },
+  {
+    "context": "(vim_mode == normal && not_editing)",
+    "bindings": {
+      "g shift-r": "editor::FindAllReferences",
+    },
+  },
+  {
+    "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
+    "bindings": {
+      "shift-g shift-r": "git::Restore",
+    },
+  },
+  {
+    "context": "(((vim_mode == normal || vim_mode == visual) && !menu) || Workspace && not_editing)",
+    "bindings": {
+      "space f s": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "vim_mode == normal ||not_editing",
+    "bindings": {
+      "space c a": "editor::ToggleCodeActions",
+    },
+  },
+  {
+    "context": "(vim_mode == visual && not_editing)",
+    "bindings": {
+      "space /": "vim::ToggleComments",
+    },
+  },
+  {
+    "context": "(vim_mode == normal)",
+    "bindings": {
+      "space /": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "(((vim_mode == normal || vim_mode == visual) && !menu) || (Workspace && not_editing))",
+    "bindings": {
+      "space n": "vim::GoToTab",
+    },
+  },
+  {
+    "context": "(((vim_mode == normal || vim_mode == visual) && !menu) || (Workspace && not_editing))",
+    "bindings": {
+      "space p": "vim::GoToPreviousTab",
+    },
+  },
+  {
+    "context": "vim_mode==normal",
+    "bindings": {
+      "space x": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "(vim_mode == normal )",
+    "bindings": {
+      "space g r": "editor::Rename",
+    },
+  },
+  {
+    "context": "(vim_mode == normal || (ProjectPanel || (GitPanel && Workspace)))",
+    "bindings": {
+      "space e f": "project_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "((vim_mode == normal ) || (ProjectPanel || (GitPanel && Workspace)))",
+    "bindings": {
+      "space e r": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "(vim_mode == normal)",
+    "bindings": {
+      "space r r": "task::Spawn",
+    },
+  },
+  {
+    "context": "(vim_mode == normal || (ProjectPanel && (GitPanel || Workspace)))",
+    "bindings": {
+      "space e g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "vim_mode==normal",
+    "bindings": {
+      "space s v": "pane::SplitDown",
+    },
+  },
+  {
+    "context": "vim_mode==normal",
+    "bindings": {
+      "space s h": "pane::SplitRight",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "alt-k": "workspace::MovePaneUp",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "alt-j": "workspace::MovePaneDown",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "alt-h": "workspace::MovePaneLeft",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "alt-l": "workspace::MovePaneRight",
+    },
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "n": "project_panel::NewFile",
+    },
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "d": "project_panel::Delete",
+    },
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "a": "project_panel::NewDirectory",
+    },
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "f": "project_panel::RevealInFileManager",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "x": "project_panel::Cut",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "y": "project_panel::Copy",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "p": "project_panel::Paste",
+    },
+  },
+  {
+    "context": "vim_mode == normal || Workspace",
+    "bindings": {
+      "ctrl-escape": "terminal_panel::Toggle"
+    }
+  }
+]

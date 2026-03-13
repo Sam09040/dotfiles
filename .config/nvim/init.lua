@@ -15,7 +15,7 @@ vim.opt.clipboard = "unnamedplus"
 
 Set = vim.keymap.set
 Set({ "n", "v" }, "<leader>y", [["+y]])
-Set("n", "<Esc>", ":nohlsearch<CR>", { expr = true, silent = true, desc = "Clear highlighted search text" })
+Set("n", "<Esc>", ":nohl<CR>", { expr = true, silent = true, desc = "Clear highlighted search text" })
 
 require("options")
 require("plugin.floaterminal")

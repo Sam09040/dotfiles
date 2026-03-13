@@ -1,0 +1,111 @@
+{
+  "tab_size": 2,
+  "languages": {
+    "Python": {
+      "tab_size": 3,
+    },
+    "C": {
+      "tab_size": 2,
+    },
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "git_panel": {
+    "sort_by_path": true,
+    "tree_view": true,
+  },
+  "project_panel": {
+    "auto_open": {
+      "on_drop": false,
+      "on_paste": false,
+    },
+  },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.8,
+  },
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "show_diagnostics": "errors",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "status_bar": {
+    "active_encoding_button": "enabled",
+  },
+  "search": {
+    "include_ignored": true,
+  },
+  "use_smartcase_search": true,
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_icon": true,
+  },
+  "relative_line_numbers": "enabled",
+  "colorize_brackets": true,
+  "hard_tabs": false,
+  "vim": {
+    "use_smartcase_find": true,
+  },
+  "toolbar": {
+    "code_actions": false,
+  },
+  "minimap": {
+    "show": "auto",
+  },
+  "auto_signature_help": true,
+  "lsp_document_colors": "border",
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "autoscroll_on_clicks": true,
+  "which_key": {
+    "enabled": true,
+  },
+  "vim_mode": true,
+  "ui_font_family": "FiraCode Nerd Font",
+  "ui_font_size": 20.0,
+  "buffer_font_size": 20.0,
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_features": {
+    "calt": true,
+  },
+  "gutter": {
+    "line_numbers": true,
+    "folds": true,
+    "runnables": true,
+  },
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "enabled": true,
+    "coloring": "fixed",
+    "line_width": 2,
+    "active_line_width": 2,
+  },
+  "show_whitespaces": "all",
+  "whitespace_map": {
+    "tab": "⟶",
+  },
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 120,
+  "terminal": {
+    "keep_selection_on_copy": false,
+    "copy_on_select": true,
+    "shell": "system",
+    "font_family": "FiraCode Nerd Font",
+    "font_features": {
+      "calt": true,
+    },
+  },
+  "base_keymap": "VSCode",
+  "use_system_prompts": true,
+  "use_system_path_prompts": true,
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "icon_theme": "Warm Charmed Icons",
+  "theme": "Aura Soft Dark",
+  "extend_comment_on_newline": false,
+}
