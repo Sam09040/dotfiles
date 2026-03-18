@@ -79,6 +79,10 @@ local function set(mode, keys, command, desc)
   Set(mode, keys, command, { desc = desc })
 end
 
+-- Basic configs
+Set({ "n", "v" }, "<leader>y", [["+y]])
+Set("n", "<esc>", "<cmd>nohlsearch<CR>", { expr = true, silent = true, desc = "Clear highlighted search text" })
+
 -- Go to config dir
 set("n", "<leader>cfg", ":cd ~/.config/nvim/<cr> :e .<cr>", "Go to config dir")
 

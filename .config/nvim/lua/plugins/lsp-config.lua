@@ -27,10 +27,12 @@ return {
   },
   config = function()
     Set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
-    Set("n", "gd", ":Telescope lsp_definitions<cr>", { desc = "Shows definition" })
-    Set("n", "gR", ":Telescope lsp_references<cr>", { desc = "Shows references" })
-    Set("n", "gD", ":Telescope diagnostics<cr>", { desc = "Shows diagnostics" })
+    Set("n", "gd", ":Telescope lsp_definitions<cr>", { desc = "Shows definition", silent = true, expr = true })
+    Set("n", "gR", ":Telescope lsp_references<cr>", { desc = "Shows references", silent = true, expr = true })
+    Set("n", "gD", ":Telescope diagnostics<cr>", { desc = "Shows diagnostics", silent = true, expr = true })
     Set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Shows code actions" })
     Set({ "n", "v" }, "<leader>gr", vim.lsp.buf.rename, { desc = "Rename" })
+
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end,
 }
