@@ -44,9 +44,9 @@ opt.relativenumber = true
 -- Whitespace config
 opt.list = true
 opt.listchars = {
-  tab = ">> ",
-  trail = " ",
-  nbsp = "+",
+	tab = ">> ",
+	trail = " ",
+	nbsp = "+",
 }
 
 -- Search config
@@ -56,16 +56,16 @@ opt.smartcase = true
 -- Diagnostic
 opt.winborder = "rounded"
 vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = true,
-  float = {
-    focusable = false,
-    style = "minimal",
-    border = "rounded",
-    source = true,
-  },
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	update_in_insert = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = true,
+	},
 })
 
 -- Cursor config
@@ -76,7 +76,7 @@ opt.guicursor = "n-v-c:block-CursorM,i-ci:ver40-CursorM,a:blinkwait700-blinkoff4
 --- Keymaps
 --- ==================================================
 local function set(mode, keys, command, desc)
-  Set(mode, keys, command, { desc = desc })
+	Set(mode, keys, command, { desc = desc })
 end
 
 -- Basic configs
@@ -91,10 +91,10 @@ set({ "n", "v" }, "<leader>l", "$", "Go to the end of the line")
 set({ "n", "v" }, "<leader>h", "_", "Go to the begin of the line")
 
 vim.keymap.set("n", "j", function()
-  return vim.v.count == 0 and "gj" or "j"
+	return vim.v.count == 0 and "gj" or "j"
 end, { expr = true, silent = true, desc = "Down (wrap-aware)" })
 vim.keymap.set("n", "k", function()
-  return vim.v.count == 0 and "gk" or "k"
+	return vim.v.count == 0 and "gk" or "k"
 end, { expr = true, silent = true, desc = "Up (wrap-aware)" })
 
 set("n", "n", "nzzzv", "Next search result (centered)")
@@ -132,39 +132,53 @@ set("v", ">", ">gv", "Indent right and reselect")
 
 local augroup = vim.api.nvim_create_augroup("UserConfig", { clear = true })
 function CreateAutocmd(event, opts)
-  vim.api.nvim_create_autocmd(event, opts)
+	vim.api.nvim_create_autocmd(event, opts)
 end
 
 -- highlight yanked text
 CreateAutocmd("TextYankPost", {
-  group = augroup,
-  callback = function()
-    vim.hl.on_yank()
-  end,
+	group = augroup,
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
 
 -- return to last cursor position
 CreateAutocmd("BufReadPost", {
-  group = augroup,
-  desc = "Restore last cursor position",
-  callback = function()
-    if vim.o.diff then
-      return
-    end
+	group = augroup,
+	desc = "Restore last cursor position",
+	callback = function()
+		if vim.o.diff then
+			return
+		end
 
-    local last_pos = vim.api.nvim_buf_get_mark(0, '"') -- {line, col}
-    local last_line = vim.api.nvim_buf_line_count(0)
+		local last_pos = vim.api.nvim_buf_get_mark(0, '"') -- {line, col}
+		local last_line = vim.api.nvim_buf_line_count(0)
 
-    local row = last_pos[1]
-    if row < 1 or row > last_line then
-      return
-    end
+		local row = last_pos[1]
+		if row < 1 or row > last_line then
+			return
+		end
 
-    pcall(vim.api.nvim_win_set_cursor, 0, last_pos)
-  end,
+		pcall(vim.api.nvim_win_set_cursor, 0, last_pos)
+	end,
 })
 
---- ==================================================
---- FLOATING TERMINAL
---- ==================================================
---- TODO
+-- Open help in vertical split
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "help",
+	command = "wincmd L",
+})
+
+-- auto resize splits
+vim.api.nvim_create_autocmd("VimResized", {
+	command = "wincmd =",
+})
+
+-- no auto continue comments on new line
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
