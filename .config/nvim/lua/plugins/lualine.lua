@@ -35,7 +35,7 @@ return {
       local function separator()
          return {
             function()
-               return "│"
+               return "││"
             end,
             color = { fg = colors.surface0, bg = "NONE", gui = "bold" },
             padding = { left = 1, right = 1 },

@@ -1,7 +1,0 @@
-{
-    "diagnostics.globals": [
-        "vim",
-        "set"
-    ],
-    "runtime.unicodeName": true
-}

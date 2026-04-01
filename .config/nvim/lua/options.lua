@@ -67,6 +67,7 @@ vim.diagnostic.config({
 		source = true,
 	},
 })
+opt.termguicolors = true
 
 -- Cursor config
 vim.api.nvim_set_hl(0, "CursorM", { fg = "#000000", bg = "#d20efc" })
@@ -81,7 +82,7 @@ end
 
 -- Basic configs
 Set({ "n", "v" }, "<leader>y", [["+y]])
-Set("n", "<esc>", "<cmd>nohlsearch<CR>", { expr = true, silent = true, desc = "Clear highlighted search text" })
+Set("n", "<esc>", ":nohlsearch<CR>", { silent = true, desc = "Clear highlighted search text" })
 
 -- Go to config dir
 set("n", "<leader>cfg", ":cd ~/.config/nvim/<cr> :e .<cr>", "Go to config dir")

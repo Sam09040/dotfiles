@@ -16,5 +16,7 @@ vim.opt.clipboard = "unnamedplus"
 Set = vim.keymap.set
 
 require("options")
-require("plugin.floaterminal")
 require("lazy").setup("plugins")
+
+vim.cmd.colorscheme("tokyonight")
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
