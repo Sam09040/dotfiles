@@ -26,7 +26,10 @@ keybind = ctrl+alt+k=goto_split:down
 keybind = ctrl+alt+l=goto_split:right
 
 window-height = 38
-window-width = 145
+window-width = 140
+
+# Background options
+# background-opacity = 0.2
 
 # shaders
 
