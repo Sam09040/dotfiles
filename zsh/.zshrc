@@ -10,6 +10,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export EDITOR=/usr/bin/nvim
 export ZSH="$HOME/.oh-my-zsh"
+export GTK_IM_MODULE=ibus
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -19,7 +20,7 @@ setopt auto_param_slash
 setopt globdots
 
 PYTHON_VENV_NAME=".venv"
-plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete command-not-found tmux)
+plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete mise command-not-found tmux)
 
 source $ZSH/oh-my-zsh.sh
 
