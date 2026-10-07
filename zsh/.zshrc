@@ -9,7 +9,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 export EDITOR=/usr/bin/nvim
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/sam09040/.oh-my-zsh"
 export GTK_IM_MODULE=ibus
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -20,7 +20,7 @@ setopt auto_param_slash
 setopt globdots
 
 PYTHON_VENV_NAME=".venv"
-plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete mise command-not-found tmux)
+plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete mise command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,14 +50,12 @@ export FZF_DEFAULT_OPTS=" \
 --color=border:#6C7086,label:#CDD6F4"
 
 # history
-setopt share_history
-setopt append_history
 setopt hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
 # bindings
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
 
 # completion style 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -69,14 +67,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color $realpath'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-export PIP_HOME="~/.local/bin"
-export PATH=$PATH:$PIP_HOME
+export PIP_HOME="/home/sam09040/.local/bin"
+export MISE_HOME="/home/sam09040/.local/share/mise/installs"
+export PATH=$PATH:$PIP_HOME:$MISE_HOME
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-. "$HOME/.local/bin/env"
+. "/home/sam09040/.local/bin/env"
 eval "$(/home/sam09040/.local/bin/mise activate zsh)"
