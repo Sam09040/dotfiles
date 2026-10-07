@@ -1,22 +1,25 @@
 # First, upgrade the system
 sudo dnf5 upgrade -y
 
+sleep 2
 # Then, get the repos and install all necessary packages
 sudo dnf copr enable scottames/ghostty
 sudo dnf copr enable lihaohong/yazi
 sudo dnf copr enable jdxcode/mise
+sleep 2
 
-sudo dnf5 install bat lsd mise zsh zsh-autosuggestions zsh-syntax-highlighting fzf git tldr ghostty fastfetch zoxide ripgrep tmux gamemode mangohud nvim yazi fortune cowsay lolcat -y
+sudo dnf5 install bat lsd mise zsh fzf git tldr ghostty fastfetch zoxide ripgrep gamemode mangohud nvim yazi fortune cowsay lolcat -y
+sleep 2
 
 # After install, run tldr
 tldr -u
 
 # Installing the plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM"/plugins/zsh-autosuggestions;\
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM"/plugins/zsh-syntax-highlighting;\
+sleep 2
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZSH_CUSTOM"/plugins/zsh-autocomplete;\
 git clone https://github.com/Aloxaf/fzf-tab "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/fzf-tab;\
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+sleep 2
 
 # Installing nvim dependencies
 sudo dnf5 install luarocks -y
