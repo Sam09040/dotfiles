@@ -1,0 +1,17 @@
+[safe]
+	directory = /mnt/winds/Sammi/Documents/ides
+	directory = /mnt/winds/Sammi/Documents/ides/html_dev/faculdade/projeto-livraria-react
+	directory = /mnt/winds/Sammi/Documents/ides/python_dev/faculdade/5sem/conversor-moeda-python
+	directory = /mnt/winds/Sammi/Documents/ides/java_dev/dio_classes/controle-fluxo-desafio/controle_fluxo_desafio
+	directory = /mnt/winds/Sammi/Documents/ides/java_dev/dio_classes/DesafioControleFluxo
+[user]
+	email = jpalmeida0904@gmail.com
+	name = sam09040
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[core]
+	editor = nvim
