@@ -22,8 +22,8 @@ echo "O sistema foi atualizado. Agora serão baixados os pacotes necessários."
 INSTALL_CMD="sudo dnf5 install -y"
 LIST_PACKAGES="dnf5 list"
 
-read -p "É o sistema principal? [S(1)/N(0)]" IS_NOT_VM
-if IS_NOT_VM; then
+VIRT=$(systemd-detect-virt)
+if [ "$VIRT" = "none" ]; then
   PACOTES=(
     "ghostty",
     "gamemode",
@@ -125,7 +125,7 @@ for PACKAGE in "${PACKAGES_MISE[@]}"; do
 done
 echo "Instalação dos pacotes do mise finalizada"
 
-if IS_NOT_VM; then
+if [ "$VIRT" = "none" ]; then
   FLATPAK_INSTALL_CMD="flatpak install"
   FLATPAK_LIST_PACKAGES="flatpak info"
 
