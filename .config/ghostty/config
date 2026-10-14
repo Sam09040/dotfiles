@@ -35,16 +35,13 @@ window-height = 38
 window-width = 140
 
 # Background options
-# background-opacity = 0.2
+background-opacity = 0.9
+background-blur-radius = 20
 
 # shaders
 
 custom-shader = shaders/cursor_smear.glsl
 custom-shader = shaders/sparks.glsl
-
-# window-decoration
-
-window-decoration = client
 
 # cursor color
 
@@ -54,6 +51,8 @@ cursor-color = #d20efc
 
 split-divider-color = #3584e4
 
-# Desativa recursos de detecção de teclas que conflitam com o método de entrada do sistema
-
 window-inherit-working-directory = true
+
+# Extras
+mouse-hide-while-typing = true
+window-decoration = true
