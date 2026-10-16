@@ -20,7 +20,7 @@ setopt auto_param_slash
 setopt globdots
 
 PYTHON_VENV_NAME=".venv"
-plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete mise command-not-found)
+plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting mise command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,6 +58,9 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
 # completion style 
+unsetopt menu_complete
+setopt auto_list auto_menu
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no

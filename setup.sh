@@ -88,13 +88,6 @@ else
   echo "✅ fzf-tab já está presente"
 fi
 
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete" ]; then
-  echo "⬇️ Clonando zsh-autocomplete..."
-  git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete"
-else
-  echo "✅ zsh-autocomplete já está presente"
-fi
-
 if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
   echo "⬇️ Clonando powerlevel10k..."
   git clone --depth 1 -- https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k"
