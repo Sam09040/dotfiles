@@ -5,12 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 export EDITOR=/usr/bin/nvim
-export ZSH="/home/sam09040/.oh-my-zsh"
-export GTK_IM_MODULE=ibus
+export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -34,8 +30,8 @@ function y() {
 
 alias ls="lsd -A"
 alias cat="bat"
-alias compile="~/scripts/compile.sh"
-alias cookie="~/scripts/cookie.sh"
+alias compile="${HOME}/scripts/compile.sh"
+alias cookie="${HOME}/scripts/cookie.sh"
 alias upgrade="sudo dnf5 upgrade -y --refresh"
 alias install="sudo dnf5 install"
 alias dnf="dnf5"
@@ -70,11 +66,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color $realpath'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-export PIP_HOME="/home/sam09040/.local/bin"
-export MISE_HOME="/home/sam09040/.local/share/mise/installs"
+export PIP_HOME="$HOME/.local/bin"
+export MISE_HOME="$HOME/.local/share/mise/installs"
 export PATH=$PATH:$PIP_HOME:$MISE_HOME
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-. "/home/sam09040/.local/bin/env"
-eval "$(/home/sam09040/.local/bin/mise activate zsh)"
+. "${HOME}/.local/bin/env"
+eval "$(${HOME}/.local/bin/mise activate zsh)"
