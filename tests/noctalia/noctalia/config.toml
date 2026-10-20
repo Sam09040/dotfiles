@@ -1,0 +1,8 @@
+[theme]
+mode = "dark" 
+
+[bar.default]
+position = "top"
+
+[shell]
+font_family = "Fira Code Nerd Font"
