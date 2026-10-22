@@ -24,13 +24,20 @@ LIST_PACKAGES="dnf5 list"
 
 VIRT=$(systemd-detect-virt)
 if [ "$VIRT" = "none" ]; then
+
+  echo "Habilitando o repositorio Terra e do Ghostty"
+
+  sudo dnf config-manager --add-repo https://terra.fyralabs.com/terra.repo
+  sudo dnf copr enable scottames/ghostty
+
   PACOTES=(
     "ghostty",
     "gamemode",
-    "mangohud"
+    "mangohud",
+    "umbriel-nightly",
+    "noctalia"
     )
 
-  sudo dnf copr enable scottames/ghostty
   for PACKAGE in "${PACOTES[@]}"; do
     installPackage "${INSTALL_CMD}" "${PACKAGE}" "${LIST_PACKAGES}"
   done

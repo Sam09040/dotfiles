@@ -1,8 +1,240 @@
-[theme]
-mode = "dark" 
+[audio]
+enable_overdrive = true
 
 [bar.default]
+background_opacity = 0.39999999105930328
+center = [ "media", "spacer_middle", "clock", "network_rx", "network_tx", "cat" ]
+end = [
+    "bar",
+    "tray",
+    "notifications",
+    "clipboard",
+    "bar_2",
+    "network",
+    "bluetooth",
+    "battery",
+    "volume",
+    "brightness",
+    "control-center",
+    "session"
+]
+font_scale = 1.0999999828636646
 position = "top"
+start = [ "workspaces", "launcher", "wallpaper", "wallhaven" ]
+
+[calendar]
+enabled = true
+
+    [calendar.account.personal_icloud]
+    color = "primary"
+    name = "Calendário Pessoal"
+    type = "google"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 144.0
+    box_width = 240.0
+    cx = 960.0
+    cy = 540.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "yocraft/battery-widget:widget"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background_opacity = 0.59999999999999998
+        charging_color = "secondary"
+        color = "primary"
+
+[dock]
+background_opacity = 0.14999999664723873
+icon_size = 45
+magnification_scale = 1.2500000037252903
+pinned = [ "app.zen_browser.zen", "com.mitchellh.ghostty" ]
+reserve_space = false
+smart_auto_hide = true
+
+[hot_corners]
+enabled = true
+
+    [hot_corners.top_left]
+    action = "window_switcher"
+
+    [hot_corners.top_right]
+    action = "control_center"
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 64.0
+    box_width = 160.0
+    cx = 960.0
+    cy = 716.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "yocraft/battery-widget:widget"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background_opacity = 0.59999999999999998
+        background_padding = 10
+        background_radius = 12
+        charging_color = "secondary"
+        color = "primary"
+        show_glyph = true
+        show_label = true
+
+[plugin_settings."noctalia/wallhaven"]
+download_dir = "/home/sam09040/Pictures/wallpapers"
+
+[plugins]
+enabled = [
+    "noctalia/umbriel-companion",
+    "noctalia/bongocat",
+    "noctalia/wallhaven",
+    "icefish/phone-connect",
+    "yocraft/battery-widget"
+]
 
 [shell]
+app_icon_colorize = true
 font_family = "Fira Code Nerd Font"
+lang = "pt-BR"
+screen_time_enabled = true
+settings_window_translucent = true
+telemetry_enabled = true
+
+    [shell.launcher]
+    pinned = [ "com.mitchellh.ghostty", "dev.zed.Zed", "app.zen_browser.zen", "org.kde.dolphin", "com.rtosta.zapzap" ]
+
+    [shell.panel]
+    border_color = "secondary"
+    border_width = 2.0
+    open_near_click_launcher = true
+    transparency_mode = "glass"
+
+    [shell.window_switcher]
+    current_workspace_only = true
+    mru = true
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Catppuccin Mocha Mauve-Lavender"
+mode = "dark"
+source = "community"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "qt", "umbriel" ]
+    community_ids = [ "discord", "neovim", "vscode", "zed", "steam", "fastfetch", "bat", "fzf", "konsole", "lsd", "yazi" ]
+
+[wallpaper]
+directory = "/home/sam09040/Pictures"
+
+    [wallpaper.default]
+    path = "/home/sam09040/Pictures/forest nebula.png"
+
+    [wallpaper.last]
+    path = "/home/sam09040/Pictures/forest nebula.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/sam09040/Pictures/forest nebula.png"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/sam09040/Pictures/forest nebula.png"
+    theme_mode = "dark"
+
+[widget.bar]
+type = "noctalia/umbriel-companion:bar"
+
+[widget.bar_2]
+type = "icefish/phone-connect:bar"
+
+[widget.battery]
+color = "primary"
+
+[widget.brightness]
+color = "primary"
+
+[widget.cat]
+audio_spectrum = true
+color = "primary"
+input_devices = [ "/dev/input/event10" ]
+tappy_mode = true
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+format = "{:%d/%m %H:%M }"
+
+[widget.launcher]
+enabled = false
+
+[widget.network_rx]
+color = "primary"
+
+[widget.network_tx]
+color = "primary"
+
+[widget.spacer_middle]
+type = "spacer"
+
+[widget.volume]
+color = "primary"
+
+[widget.wallhaven]
+glyph = "wallpaper-selector"
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.wallpaper]
+enabled = false

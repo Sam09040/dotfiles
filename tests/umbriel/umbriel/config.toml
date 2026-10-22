@@ -13,8 +13,7 @@ files = ["noctalia.toml"]
 [general]
 autostart = ["noctalia"]
 mod_key = "Super"
-show_cheatsheet = false
-xwayland = true
+xwayland = false
 xwayland_native_resolution = false
 
 # ==============================================================================
@@ -63,8 +62,7 @@ size = 28
 
 # Applications and session
 "Mod+Return" = { action = "spawn:ghostty", repeat = false }
-# "Mod" = "spawn:noctalia msg panel-toggle launcher"
-"Mod+Comma" = "spawn:noctalia msg panel-toggle launcher"
+"Mod" = "spawn:noctalia msg panel-toggle launcher"
 "Mod+Period" = "spawn:noctalia msg panel-toggle control-center"
 "Mod+W" = { action = "window-close", repeat = false }
 "Mod+Escape" = "spawn:noctalia msg session lock"
