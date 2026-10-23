@@ -110,8 +110,8 @@ rules = [
 	{ mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
 	# Fallback
-	{ name = "*", fg = "#cdd6f4" },
-	{ name = "*/", fg = "#b4befe" }
+	{ mime = "*", fg = "#cdd6f4" },
+	{ mime = "*/", fg = "#b4befe" }
 ]
 
 [spot]
@@ -754,3 +754,7 @@ exts = [
   { name = "liquid", text = "", fg = "#a6e3a1" },
   { name = "zip", text = "", fg = "#fab387" },
 ]
+
+[flavor]
+dark = "noctalia"
+light = "noctalia"

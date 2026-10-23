@@ -13,7 +13,8 @@ files = ["noctalia.toml"]
 [general]
 autostart = ["noctalia"]
 mod_key = "Super"
-xwayland = false
+show_cheatsheet = false
+xwayland = true
 xwayland_native_resolution = false
 
 # ==============================================================================
@@ -62,8 +63,8 @@ size = 28
 
 # Applications and session
 "Mod+Return" = { action = "spawn:ghostty", repeat = false }
-"Mod" = "spawn:noctalia msg panel-toggle launcher"
-"Mod+Period" = "spawn:noctalia msg panel-toggle control-center"
+"Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
+"Mod" = "spawn:noctalia msg panel-toggle control-center"
 "Mod+W" = { action = "window-close", repeat = false }
 "Mod+Escape" = "spawn:noctalia msg session lock"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
@@ -91,13 +92,10 @@ size = 28
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
 "Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
-"Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
-"Mod+F" = { action = "window-toggle-maximize", repeat = false }
-"Mod+Ctrl+F" = { action = "window-toggle-fullscreen", repeat = false }
+"Mod+F" = { action = "window-toggle-maximize-to-edges", repeat = false }
+"Mod+M" = { action = "window-toggle-maximize", repeat = false }
+"Mod+Shift+F" = { action = "window-toggle-fullscreen", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
-"Mod+Shift+R" = "window-cycle-primary-extent-back"
-# "Mod+Ctrl+Comma" = "window-consume-from-left"
-# "Mod+Ctrl+Period" = "window-consume-from-right"
 "Mod+Q" = { action = "column-toggle-tabbed", repeat = false }
 "Mod+Alt+L" = "column-focus-tab-next"
 "Mod+Alt+H" = "column-focus-tab-previous"
@@ -126,9 +124,9 @@ size = 28
 "Mod+Shift+9" = "window-move-to-workspace:9"
 
 # Scratchpad
-"Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
-"Mod+Space" = "scratchpad-toggle"
-"Mod+Ctrl+Space" = { action = "window-restore-from-scratchpad", repeat = false }
+"Mod+Shift+Period" = { action = "window-move-to-scratchpad", repeat = false }
+"Mod+Period" = "scratchpad-toggle"
+"Mod+Ctrl+Period" = { action = "window-restore-from-scratchpad", repeat = false }
 "Mod+Tab" = "scratchpad-focus-next"
 
 # Audio
@@ -155,7 +153,7 @@ default_extent_fraction = 0.5
 # ==============================================================================
 [[window_rule]]
 blur = true
-blur_optimized = false
+blur_optimized = true
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
