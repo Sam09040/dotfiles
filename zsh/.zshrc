@@ -5,10 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export EDITOR=/usr/bin/nvim
+export EDITOR="${HOME}/.local/share/mise/installs/neovim/latest/bin/nvim"
 export ZSH="${HOME}/.oh-my-zsh"
 
-export GTK_IM_MODULE=simple
+export GTK_IM_MODULE=ibus
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -21,6 +21,7 @@ PYTHON_VENV_NAME=".venv"
 plugins=(git uv python fzf-tab zsh-autosuggestions zsh-syntax-highlighting mise command-not-found)
 
 source $ZSH/oh-my-zsh.sh
+source "$HOME/.config/fzf/themes/noctalia.sh"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -37,7 +38,7 @@ alias cookie="${HOME}/scripts/cookie.sh"
 alias upgrade="sudo dnf5 upgrade -y --refresh"
 alias install="sudo dnf5 install"
 alias dnf="dnf5"
-alias fzf="fzf --preview='cat {}'"
+alias fzf="fzf --preview='bat {}'"
 alias vi="nvim"
 
 export FZF_DEFAULT_OPTS=" \

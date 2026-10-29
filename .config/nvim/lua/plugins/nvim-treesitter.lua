@@ -2,12 +2,12 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-   branch = "master",
+   branch = "main",
    lazy = false,
 	config = function()
-		local configs = require("nvim-treesitter.configs")
+		local TS = require("nvim-treesitter")
 
-		configs.setup({
+		TS.setup({
 			ensure_installed = {
 				"c",
 				"lua",
@@ -26,5 +26,11 @@ return {
 			highlight = { enable = true },
 			indent = { enable = true },
 		})
+
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function ()
+        pcall(vim.treesitter.start)
+      end
+    })
 	end,
 }
