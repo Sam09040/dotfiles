@@ -1,8 +1,8 @@
 [include]
 files = [
-  "./appearance.toml",
-  "./binds.toml",
-  "./shaders/community/animation/workspace-noctalia-wave/effect.toml",
+  "appearance.toml",
+  "binds.toml",
+  "shaders/community/animation/workspace-noctalia-wave/effect.toml",
   "/usr/share/umbriel/effects/border/pulse/effect.toml"
 ]
 

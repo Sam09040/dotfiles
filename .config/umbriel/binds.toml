@@ -9,7 +9,7 @@
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 "Mod+0" = "spawn umbriel msg cheatsheet-toggle"
 "Mod+P" = "spawn noctalia msg screenshot-fullscreen"
-"Print" = "spawn noctalia msg screenshot-region"
+"Print" = "spawn noctalia msg screenshot-region --annotate"
 "Mod+V" = "spawn noctalia msg panel-toggle clipboard"
 "Mod+S" = "spawn noctalia msg panel-toggle session"
 
